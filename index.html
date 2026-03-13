@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultra-smooth Cleansing Lotion — Formula Explorer | Holiferm</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #0F6E56;
+    --teal-light: #E1F5EE;
+    --teal-mid: #1D9E75;
+    --teal-pale: #9FE1CB;
+    --blue: #185FA5;
+    --blue-light: #E6F1FB;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --green: #3B6D11;
+    --green-light: #EAF3DE;
+    --purple-light: #EEEDFE;
+    --purple: #3C3489;
+    --coral-light: #FAECE7;
+    --coral: #993C1D;
+    --pink-light: #FBEAF0;
+    --pink: #72243E;
+    --gray: #5F5E5A;
+    --gray-light: #F1EFE8;
+    --text: #1a1a18;
+    --text-muted: #6b6b66;
+    --text-faint: #9c9a92;
+    --border: rgba(0,0,0,0.1);
+    --border-strong: rgba(0,0,0,0.18);
+    --bg: #fafaf8;
+    --bg-card: #ffffff;
+    --bg-surface: #f4f3ef;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ─── Header ─── */
+  .site-header {
+    background: var(--teal);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+
+  .logo-dots {
+    display: grid;
+    grid-template-columns: repeat(5, 6px);
+    gap: 2.5px;
+  }
+  .logo-dots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.6); }
+  .logo-dots span.bright { background: rgba(255,255,255,1); }
+  .logo-dots span.dim { background: rgba(255,255,255,0.25); }
+
+  .logo-text { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 20px; color: #fff; letter-spacing: -0.3px; }
+  .header-badge { font-size: 12px; color: var(--teal-pale); letter-spacing: 0.04em; font-weight: 300; }
+
+  /* ─── Hero ─── */
+  .hero {
+    background: linear-gradient(160deg, #0d5e48 0%, #0F6E56 40%, #1a8a6b 100%);
+    padding: 3rem 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 40px; right: 40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .hero-inner { max-width: 820px; margin: 0 auto; position: relative; }
+
+  .hero-eyebrow {
+    font-size: 12px; font-weight: 400; color: var(--teal-pale);
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;
+  }
+
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: #fff; line-height: 1.1; margin-bottom: 8px; font-weight: 400;
+  }
+  .hero-title em { font-style: italic; color: var(--teal-pale); }
+
+  .hero-sub { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 1.5rem; font-weight: 300; }
+
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .hero-pill {
+    padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 400;
+    border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.08); letter-spacing: 0.02em;
+  }
+
+  /* ─── Main ─── */
+  .main { max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  /* ─── Phase section ─── */
+  .phase-section { margin-bottom: 1.25rem; }
+
+  .phase-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .phase-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 18px; border-bottom: 1px solid var(--border);
+  }
+
+  .phase-circle {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 500; flex-shrink: 0;
+  }
+  .pa .phase-circle { background: var(--blue-light); color: var(--blue); }
+  .pb .phase-circle { background: var(--teal-light); color: var(--teal); }
+  .pc .phase-circle { background: var(--amber-light); color: var(--amber); }
+
+  .phase-head-text { flex: 1; }
+  .phase-head-title { font-size: 14px; font-weight: 500; color: var(--text); }
+  .phase-head-desc { font-size: 12px; color: var(--text-muted); }
+  .phase-head-note { font-size: 12px; color: var(--text-faint); margin-left: auto; white-space: nowrap; }
+
+  /* ─── Ingredient row ─── */
+  .ing-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 18px; border-bottom: 1px solid var(--border);
+    cursor: pointer; transition: background 0.12s; user-select: none;
+  }
+  .ing-row:last-of-type { border-bottom: none; }
+  .ing-row:hover { background: #f8f8f6; }
+  .ing-row.open { background: #f5f5f2; }
+
+  .ing-bar-wrap { width: 52px; flex-shrink: 0; }
+  .ing-bar-track { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .ing-bar-fill { height: 100%; border-radius: 3px; }
+  .pa .ing-bar-fill { background: #378ADD; }
+  .pb .ing-bar-fill { background: var(--teal-mid); }
+  .pc .ing-bar-fill { background: #EF9F27; }
+
+  .ing-pct { font-size: 12px; color: var(--text-muted); width: 38px; flex-shrink: 0; text-align: right; font-variant-numeric: tabular-nums; }
+  .ing-name { flex: 1; font-size: 14px; color: var(--text); font-weight: 400; }
+  .ing-star { color: var(--teal); font-size: 13px; margin-left: 4px; }
+
+  .tag {
+    font-size: 11px; padding: 3px 10px; border-radius: 20px;
+    font-weight: 400; flex-shrink: 0; letter-spacing: 0.02em;
+  }
+  .tag-emollient { background: var(--amber-light); color: var(--amber); }
+  .tag-emulsifier { background: var(--green-light); color: var(--green); }
+  .tag-holisurf { background: var(--teal-light); color: var(--teal); border: 1px solid var(--teal-pale); }
+  .tag-solvent { background: var(--blue-light); color: var(--blue); }
+  .tag-thickener { background: var(--purple-light); color: var(--purple); }
+  .tag-humectant { background: #E1F5EE; color: #085041; }
+  .tag-preservative { background: #FCEBEB; color: #791F1F; }
+  .tag-fragrance { background: var(--amber-light); color: var(--amber); }
+  .tag-active { background: var(--coral-light); color: var(--coral); }
+  .tag-wax { background: var(--gray-light); color: var(--gray); }
+
+  .chevron { font-size: 13px; color: var(--text-faint); transition: transform 0.2s; flex-shrink: 0; }
+  .ing-row.open .chevron { transform: rotate(90deg); }
+
+  /* ─── Detail panel ─── */
+  .detail-panel {
+    display: none; background: #f8f8f5;
+    border-bottom: 1px solid var(--border);
+  }
+  .detail-panel.open { display: block; }
+
+  .detail-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--border);
+  }
+  .dcell {
+    padding: 12px 18px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .dcell:nth-child(2n) { border-right: none; }
+  .dcell.full { grid-column: 1/-1; border-right: none; }
+  .dcell:last-child, .dcell:nth-last-child(2):not(.full) { border-bottom: none; }
+
+  .dlabel {
+    font-size: 10px; font-weight: 500; color: var(--text-faint);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5px;
+  }
+  .dval { font-size: 13px; color: var(--text); line-height: 1.55; }
+
+  .origin-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+  .d-bio { background: var(--teal); }
+  .d-mineral { background: var(--gray); }
+  .d-synth { background: var(--purple); }
+  .d-plant { background: #BA7517; }
+
+  .hf-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--teal-light); border: 1px solid var(--teal-pale);
+    border-radius: 20px; padding: 2px 9px; font-size: 11px;
+    color: var(--teal); font-weight: 500; margin-left: 6px; vertical-align: middle;
+  }
+
+  /* ─── Process ─── */
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px; font-weight: 400; color: var(--text); margin: 2rem 0 1rem;
+  }
+
+  .steps-card { background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+
+  .step-row {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 14px 18px; border-bottom: 1px solid var(--border);
+    transition: background 0.12s;
+  }
+  .step-row:last-child { border-bottom: none; }
+  .step-row:hover { background: #f8f8f6; }
+
+  .step-num {
+    width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 500; flex-shrink: 0; margin-top: 1px;
+  }
+  .s1 .step-num, .s2 .step-num { background: var(--blue-light); color: var(--blue); }
+  .s3 .step-num { background: var(--teal-light); color: var(--teal); }
+  .s4 .step-num { background: #FCEBEB; color: #791F1F; }
+  .s5 .step-num { background: var(--amber-light); color: var(--amber); }
+
+  .step-body { flex: 1; }
+  .step-text { font-size: 13px; color: var(--text); line-height: 1.6; }
+  .step-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+  .step-chip {
+    font-size: 11px; padding: 2px 9px; border-radius: 20px;
+    background: var(--bg-surface); color: var(--text-muted); border: 1px solid var(--border);
+  }
+
+  /* ─── Temp callout ─── */
+  .temp-bar {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--bg-card); border-radius: var(--radius);
+    border: 1px solid var(--border); overflow: hidden; margin-bottom: 1.25rem;
+  }
+  .temp-cell {
+    flex: 1; padding: 12px 16px; text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .temp-cell:last-child { border-right: none; }
+  .temp-label { font-size: 10px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .temp-val { font-size: 18px; font-weight: 500; color: var(--text); }
+  .temp-note { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  /* ─── Legend ─── */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 14px; margin-top: 1.5rem;
+    padding: 14px 18px; background: var(--bg-card);
+    border-radius: var(--radius-sm); border: 1px solid var(--border);
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); }
+
+  /* ─── Footer ─── */
+  .site-footer { background: var(--teal); padding: 1.25rem 2rem; text-align: center; }
+  .site-footer p { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 300; }
+  .site-footer strong { color: rgba(255,255,255,0.8); font-weight: 500; }
+
+  @media (max-width: 540px) {
+    .detail-grid { grid-template-columns: 1fr; }
+    .dcell { border-right: none; }
+    .dcell.full { grid-column: 1; }
+    .phase-head-note { display: none; }
+    .temp-bar { flex-direction: column; }
+    .temp-cell { border-right: none; border-bottom: 1px solid var(--border); }
+    .temp-cell:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="logo">
+    <div class="logo-dots">
+      <span class="dim"></span><span></span><span class="bright"></span><span></span><span class="dim"></span>
+      <span></span><span class="bright"></span><span class="bright"></span><span class="bright"></span><span></span>
+      <span class="dim"></span><span class="bright"></span><span class="bright"></span><span class="bright"></span><span class="dim"></span>
+      <span></span><span class="bright"></span><span class="bright"></span><span class="bright"></span><span></span>
+      <span class="dim"></span><span></span><span class="bright"></span><span></span><span class="dim"></span>
+    </div>
+    <span class="logo-text">holiferm</span>
+  </div>
+  <span class="header-badge">Formula Reference · #24-0007</span>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Personal Care · 98.8% Natural Origin</div>
+    <h1 class="hero-title">Ultra-smooth Cleansing Lotion<br><em>Formula Explorer</em></h1>
+    <p class="hero-sub">Click any ingredient to explore its origin, function, and role in the formula.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">Effective cleansing</span>
+      <span class="hero-pill">Hydrating</span>
+      <span class="hero-pill">Ultra-mild</span>
+      <span class="hero-pill">98.8% natural origin</span>
+      <span class="hero-pill">pH 6.5–7.5</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main -->
+<main class="main">
+
+  <!-- Temperature callout -->
+  <div class="temp-bar">
+    <div class="temp-cell">
+      <div class="temp-label">Phase A &amp; B heating</div>
+      <div class="temp-val">70°C</div>
+      <div class="temp-note">Both phases heated separately</div>
+    </div>
+    <div class="temp-cell">
+      <div class="temp-label">Homogenisation</div>
+      <div class="temp-val">2 min</div>
+      <div class="temp-note">After combining phases</div>
+    </div>
+    <div class="temp-cell">
+      <div class="temp-label">Phase C addition</div>
+      <div class="temp-val">&lt;40°C</div>
+      <div class="temp-note">Cool before adding actives</div>
+    </div>
+    <div class="temp-cell">
+      <div class="temp-label">Target pH</div>
+      <div class="temp-val">6.5–7.5</div>
+      <div class="temp-note">At 20°C</div>
+    </div>
+  </div>
+
+  <!-- Phase A -->
+  <div class="phase-section pa">
+    <div class="phase-card">
+      <div class="phase-head">
+        <div class="phase-circle">A</div>
+        <div class="phase-head-text">
+          <div class="phase-head-title">Phase A — Water phase</div>
+          <div class="phase-head-desc">Solvent, humectant, thickener — the hydrophilic base</div>
+        </div>
+        <div class="phase-head-note">Heat to 70°C</div>
+      </div>
+      <div id="phase-a-ings"></div>
+    </div>
+  </div>
+
+  <!-- Phase B -->
+  <div class="phase-section pb">
+    <div class="phase-card">
+      <div class="phase-head">
+        <div class="phase-circle">B</div>
+        <div class="phase-head-text">
+          <div class="phase-head-title">Phase B — Oil phase</div>
+          <div class="phase-head-desc">Emulsifiers, emollients, and emulsifying wax — the lipid system</div>
+        </div>
+        <div class="phase-head-note">Heat to 70°C separately</div>
+      </div>
+      <div id="phase-b-ings"></div>
+    </div>
+  </div>
+
+  <!-- Phase C -->
+  <div class="phase-section pc">
+    <div class="phase-card">
+      <div class="phase-head">
+        <div class="phase-circle">C</div>
+        <div class="phase-head-text">
+          <div class="phase-head-title">Phase C — Cool-down additions</div>
+          <div class="phase-head-desc">Preservative, fragrance, and antioxidant active</div>
+        </div>
+        <div class="phase-head-note">Add below 40°C only</div>
+      </div>
+      <div id="phase-c-ings"></div>
+    </div>
+  </div>
+
+  <!-- Manufacturing -->
+  <h2 class="section-title">Manufacturing process</h2>
+  <div class="steps-card">
+    <div class="step-row s1">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-text">Disperse xanthan gum into glycerin to pre-wet the thickener, preventing clumping when water is added.</div>
+        <div class="step-chips"><span class="step-chip">Xanthan gum</span><span class="step-chip">Vegetable glycerin</span></div>
+      </div>
+    </div>
+    <div class="step-row s2">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-text">Slowly add deionised water with stirring until a smooth, homogenous gel forms. Heat Phase A to 70°C. In a separate vessel, combine all Phase B ingredients and heat to 70°C.</div>
+        <div class="step-chips"><span class="step-chip">Deionised water</span><span class="step-chip">Both phases to 70°C</span><span class="step-chip">Prepared separately</span></div>
+      </div>
+    </div>
+    <div class="step-row s3">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-text">Add Phase B into Phase A with continuous stirring. Homogenise for 2 minutes to form a stable emulsion, then stir while cooling.</div>
+        <div class="step-chips"><span class="step-chip">B into A whilst stirring</span><span class="step-chip">Homogenise 2 min</span><span class="step-chip">Stir to cool</span></div>
+      </div>
+    </div>
+    <div class="step-row s4">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-text">Once the batch cools below 40°C, add Phase C ingredients. Adding at elevated temperatures risks degrading the preservative, fragrance, and tocopherol.</div>
+        <div class="step-chips"><span class="step-chip">Must be below 40°C</span><span class="step-chip">Phenoxyethanol</span><span class="step-chip">Fragrance</span><span class="step-chip">Tocopherol</span></div>
+      </div>
+    </div>
+    <div class="step-row s5">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-text">Check and adjust pH to 6.5–7.5 using citric acid or sodium hydroxide. Verify appearance as an off-white, smooth lotion.</div>
+        <div class="step-chips"><span class="step-chip">Target pH 6.5–7.5</span><span class="step-chip">Appearance: off-white lotion</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item"><span class="origin-dot d-bio"></span>Bio / fermentation-derived</div>
+    <div class="legend-item"><span class="origin-dot d-plant"></span>Plant / botanical</div>
+    <div class="legend-item"><span class="origin-dot d-mineral"></span>Mineral</div>
+    <div class="legend-item"><span class="origin-dot d-synth"></span>Semi-synthetic / variable</div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p><strong>Holiferm Manufacturing Limited</strong> · Ultra-smooth Cleansing Lotion #24-0007 · 98.8% natural origin</p>
+</footer>
+
+<script>
+const data = {
+  a: [
+    { name:"Deionised water", inci:"Aqua", pct:71.30, tag:"solvent", tagLabel:"Solvent", origin:"mineral",
+      originLabel:"Purified water with ions removed to prevent formula instability and unwanted reactions.",
+      fn:"Continuous phase that dissolves and disperses all water-soluble ingredients. Largest component by weight.",
+      skin:"No direct skin benefit — the carrier medium for all other actives.",
+      note:"Heated to 70°C to aid xanthan hydration and phase B emulsification.", holiferm:false },
+    { name:"Vegetable glycerin", inci:"Glycerin", pct:3.00, tag:"humectant", tagLabel:"Humectant", origin:"plant",
+      originLabel:"Derived from vegetable oils — typically a byproduct of biodiesel or soap production.",
+      fn:"Draws moisture from the environment into the skin. Also aids xanthan gum dispersion as the pre-wetting medium.",
+      skin:"Deeply moisturising, improves skin softness and suppleness, helps restore the barrier.",
+      note:"Vegetable-sourced glycerin specified — important for natural origin and vegan claims.", holiferm:false },
+    { name:"Xanthan gum", inci:"Xanthan gum", pct:1.00, tag:"thickener", tagLabel:"Thickener", origin:"bio",
+      originLabel:"Fermentation-derived polysaccharide — produced by Xanthomonas campestris bacteria on plant sugars.",
+      fn:"Creates a stable, shear-thinning gel network. Gives the lotion its smooth, flowing texture and helps stabilise the emulsion.",
+      skin:"Provides a silky application feel and enhances spreadability across the skin.",
+      note:"Must be pre-dispersed in glycerin before water addition to prevent clumping.", holiferm:false }
+  ],
+  b: [
+    { name:"HoliSurf LF", inci:"Glycolipids", pct:2.50, tag:"holisurf", tagLabel:"Holiferm biosurfactant", origin:"bio",
+      originLabel:"Fermentation-derived sophorolipid biosurfactant — produced by yeast from renewable feedstocks.",
+      fn:"Primary biosurfactant and emulsifier. Stabilises the oil-water interface and provides gentle cleansing without stripping the skin barrier.",
+      skin:"Ultra-mild — supports the skin microbiome and preserves the natural moisture barrier. Suitable for sensitive skin.",
+      note:"Sophorolipid lactone form from Holiferm. Key contributor to the 98.8% natural origin claim.", holiferm:true },
+    { name:"HoliSurf HF", inci:"Glycolipids", pct:1.00, tag:"holisurf", tagLabel:"Holiferm biosurfactant", origin:"bio",
+      originLabel:"Fermentation-derived sophorolipid biosurfactant — acid form variant, also produced by yeast.",
+      fn:"Co-emulsifier and cleanser working in tandem with HoliSurf LF. The HF (acid form) complements the LF (lactone form) for a broader emulsification profile.",
+      skin:"Gentle, skin-compatible cleansing that respects the epidermal lipid layer.",
+      note:"Sophorolipid acid form from Holiferm. LF + HF together give a more complete sophorolipid surfactant system.", holiferm:true },
+    { name:"Cocoa butter", inci:"Theobroma cacao (seed) butter", pct:2.00, tag:"emollient", tagLabel:"Emollient", origin:"plant",
+      originLabel:"Cold-pressed from cacao beans — sourced from Theobroma cacao trees in tropical regions.",
+      fn:"Rich solid emollient that contributes to the lotion's creamy texture and provides a protective, occlusive layer on skin.",
+      skin:"Deeply nourishing, rich in fatty acids (oleic, stearic, palmitic). Improves skin elasticity and softness.",
+      note:"Solid at room temperature — must be heated in Phase B to melt before emulsification.", holiferm:false },
+    { name:"Baobab oil", inci:"Adansonia digitata oil", pct:1.00, tag:"emollient", tagLabel:"Emollient", origin:"plant",
+      originLabel:"Cold-pressed from seeds of the African baobab tree (Adansonia digitata).",
+      fn:"Lightweight dry-touch emollient that absorbs readily into the skin without leaving a greasy residue.",
+      skin:"Rich in omega-3, -6, and -9 fatty acids. Improves skin elasticity, soothes irritation, and supports barrier repair.",
+      note:"Sustainably sourced from Africa — strong provenance story for natural and ethical claims.", holiferm:false },
+    { name:"Fractionated coconut oil", inci:"Capric/caprylic triglycerides", pct:8.00, tag:"emollient", tagLabel:"Emollient", origin:"plant",
+      originLabel:"Derived from coconut oil via fractionation — medium-chain triglycerides (C8 and C10) isolated.",
+      fn:"Largest oil component. Acts as the primary emollient carrier — lightweight, non-greasy, and excellent skin feel. Also serves as a solvent for other oil-phase ingredients.",
+      skin:"Highly skin-compatible, non-comedogenic, and rapidly absorbed. Softens and conditions without heaviness.",
+      note:"Fractionated form is liquid at all temperatures — easier to process than whole coconut oil.", holiferm:false },
+    { name:"Jojoba oil", inci:"Simmondsia chinensis seed oil", pct:5.00, tag:"emollient", tagLabel:"Emollient", origin:"plant",
+      originLabel:"Cold-pressed from seeds of the jojoba shrub (Simmondsia chinensis), native to the Sonoran Desert.",
+      fn:"Technically a liquid wax ester — closely mimics the structure of human sebum, making it uniquely compatible with skin.",
+      skin:"Balances sebum, softens skin, non-greasy finish. Excellent for all skin types including oily and acne-prone.",
+      note:"Jojoba is technically a wax, not an oil — highly stable and resistant to oxidation.", holiferm:false },
+    { name:"Marula oil", inci:"Curcuma longa root oil", pct:1.00, tag:"emollient", tagLabel:"Emollient", origin:"plant",
+      originLabel:"Expressed from the kernels of the marula fruit (Sclerocarya birrea), native to sub-Saharan Africa.",
+      fn:"Luxury emollient with a high oleic acid content. Contributes a silky, fast-absorbing finish and boosts antioxidant profile.",
+      skin:"Intensely hydrating, rich in oleic acid and antioxidants. Helps reduce the appearance of fine lines and improves skin radiance.",
+      note:"Note: INCI listed as Curcuma longa root oil (turmeric) — may be a labelling error in the source formula. Marula INCI is Sclerocarya birrea seed oil.", holiferm:false },
+    { name:"Olivem 1000", inci:"Cetearyl olivate, sorbitan olivate", pct:2.50, tag:"wax", tagLabel:"Emulsifying wax", origin:"plant",
+      originLabel:"Olive-derived emulsifying wax — esters of cetearyl alcohol and sorbitan with olive fatty acids.",
+      fn:"Primary emulsifying wax that creates and stabilises the oil-in-water emulsion. Works synergistically with the HoliSurf sophorolipids.",
+      skin:"Biomimetic — structurally similar to skin lipids. Creates a lamellar liquid crystal structure that mimics the skin barrier, enhancing moisturisation.",
+      note:"Olivem 1000 is a premium natural emulsifier well-regarded for skin compatibility and elegant texture.", holiferm:false }
+  ],
+  c: [
+    { name:"Phenoxyethanol", inci:"Phenoxyethanol", pct:1.00, tag:"preservative", tagLabel:"Preservative", origin:"synth",
+      originLabel:"Synthetic ether alcohol — can be derived from naturally occurring phenol and ethylene oxide.",
+      fn:"Broad-spectrum preservative protecting against bacteria, yeast, and mould throughout shelf life.",
+      skin:"No direct skin benefit — essential safety ingredient for any water-containing formula.",
+      note:"Heat-sensitive — must be added below 40°C. At 1% this is at the typical maximum use level.", holiferm:false },
+    { name:"Fragrance", inci:"Parfum", pct:0.20, tag:"fragrance", tagLabel:"Fragrance", origin:"synth",
+      originLabel:"Natural or synthetic aromatic blend — formulator's choice.",
+      fn:"Provides the product's scent character during application and residual fragrance on skin.",
+      skin:"Some fragrance components have mild skin-conditioning properties.",
+      note:"Added in Phase C to protect volatile aromatic compounds from heat degradation.", holiferm:false },
+    { name:"Tocopherol", inci:"Tocopherol", pct:0.50, tag:"active", tagLabel:"Active", origin:"plant",
+      originLabel:"Vitamin E — typically extracted from vegetable oils (sunflower, soy, or wheat germ).",
+      fn:"Antioxidant active that protects the formula's oil phase from oxidative rancidity and extends shelf life. Also provides direct skin benefit.",
+      skin:"Vitamin E is a well-established skin antioxidant — protects cells from free radical damage, supports barrier function, and aids healing.",
+      note:"Heat-sensitive — added below 40°C to preserve antioxidant activity. Contributes to the natural origin claim.", holiferm:false }
+  ]
+};
+
+const tagClasses = {
+  emollient:"tag-emollient", emulsifier:"tag-emulsifier", holisurf:"tag-holisurf",
+  solvent:"tag-solvent", thickener:"tag-thickener", humectant:"tag-humectant",
+  preservative:"tag-preservative", fragrance:"tag-fragrance", active:"tag-active", wax:"tag-wax"
+};
+const originClasses = { bio:"d-bio", mineral:"d-mineral", synth:"d-synth", plant:"d-plant" };
+
+function buildPhase(containerId, phase, ings) {
+  const container = document.getElementById(containerId);
+  ings.forEach((ing, i) => {
+    const id = `${phase}-${i}`;
+    const barW = ing.pct ? Math.round((ing.pct / 71.3) * 100) : 4;
+    const pctLabel = ing.pct ? ing.pct.toFixed(2) + '%' : 'q.s.';
+
+    const row = document.createElement('div');
+    row.className = 'ing-row';
+    row.innerHTML = `
+      <div class="ing-bar-wrap">
+        <div class="ing-bar-track"><div class="ing-bar-fill" style="width:${barW}%"></div></div>
+      </div>
+      <div class="ing-pct">${pctLabel}</div>
+      <div class="ing-name">${ing.name}${ing.holiferm ? '<span class="ing-star">★</span>' : ''}</div>
+      <span class="tag ${tagClasses[ing.tag]}">${ing.tagLabel}</span>
+      <span class="chevron">›</span>
+    `;
+    container.appendChild(row);
+
+    const panel = document.createElement('div');
+    panel.className = 'detail-panel';
+    panel.innerHTML = `
+      <div class="detail-grid">
+        <div class="dcell">
+          <div class="dlabel">INCI name</div>
+          <div class="dval">${ing.inci}</div>
+        </div>
+        <div class="dcell">
+          <div class="dlabel">Amount</div>
+          <div class="dval">${pctLabel} by weight</div>
+        </div>
+        <div class="dcell full">
+          <div class="dlabel">Origin</div>
+          <div class="dval">
+            <span class="origin-dot ${originClasses[ing.origin]}"></span>
+            ${ing.originLabel}
+            ${ing.holiferm ? '<span class="hf-badge">Holiferm</span>' : ''}
+          </div>
+        </div>
+        <div class="dcell full">
+          <div class="dlabel">Role in formula</div>
+          <div class="dval">${ing.fn}</div>
+        </div>
+        <div class="dcell full">
+          <div class="dlabel">Benefit to skin</div>
+          <div class="dval">${ing.skin}</div>
+        </div>
+        <div class="dcell">
+          <div class="dlabel">Processing note</div>
+          <div class="dval">${ing.note || '—'}</div>
+        </div>
+      </div>
+    `;
+    container.appendChild(panel);
+
+    row.addEventListener('click', () => {
+      const isOpen = panel.classList.contains('open');
+      document.querySelectorAll('.detail-panel.open').forEach(p => p.classList.remove('open'));
+      document.querySelectorAll('.ing-row.open').forEach(r => r.classList.remove('open'));
+      if (!isOpen) {
+        panel.classList.add('open');
+        row.classList.add('open');
+      }
+    });
+  });
+}
+
+buildPhase('phase-a-ings', 'a', data.a);
+buildPhase('phase-b-ings', 'b', data.b);
+buildPhase('phase-c-ings', 'c', data.c);
+</script>
+</body>
+</html>
